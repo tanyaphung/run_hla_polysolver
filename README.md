@@ -24,7 +24,9 @@ cd polysolver/
 
 ```
 conda config --add channels bioconda
-conda create --name polysolver samtools=1.9 novoalign=3.06.05 picard=2.18.23 perl-bio-db-sam=1.41 perl-array-utils=0.5 perl-parallel-forkmanager=2.02
+conda create --name polysolver
+conda install -c anaconda perl 
+conda install -c bioconda samtools=1.9 novoalign=3.06.05 picard=2.18.23 perl-bio-db-sam=1.41 perl-array-utils=0.5 perl-parallel-forkmanager=2.02 perl-list-moreutils=0.428
 conda activate polysolver
 ```
 
@@ -42,7 +44,7 @@ unzip picard-tools-1.120.zip
 * The default `config.sh` file asks to give the directory to GATK. It actually looks for picard. 
 * The config file I use can be found under 
 
-## Edit perl
+## Edit some other paths
 
 ```
 sed -i "s|/usr/bin/perl|$(which perl)|" scripts/*
