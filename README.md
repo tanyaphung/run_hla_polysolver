@@ -25,13 +25,36 @@ cd polysolver/
 ```
 conda config --add channels bioconda
 conda create --name polysolver samtools=1.9 novoalign=3.06.05 picard=2.18.23 perl-bio-db-sam=1.41 perl-array-utils=0.5 perl-parallel-forkmanager=2.02
+conda activate polysolver
 ```
+
+* Download picard
+
+```
+wget https://github.com/broadinstitute/picard/releases/download/1.120/picard-tools-1.120.zip
+unzip picard-tools-1.120.zip
+```
+
 
 ## Step 3: Edit the config file
 
 * The default `config.sh` file (can be found in `scripts/`) use `setenv` but this commmand is for (t)csh. I am using bash so I have changed the config file to use `export` instead. 
 * The default `config.sh` file asks to give the directory to GATK. It actually looks for picard. 
 * The config file I use can be found under 
+
+## Edit the script
+
+```
+vim scripts/shell_first_allele_calculations
+$SAMTOOLS sort -n $outDir/temp.$i.bam >  $outDir/nv.complete.chr6region.R0k6.csorted.REF_$i.bam
+```
+
+## Run
+
+```
+source scripts/config.sh
+scripts/shell_call_hla_type test/test.bam Unknown 1 hg19 STDFQ 0 out_test
+```
 
 
 
