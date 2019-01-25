@@ -42,6 +42,12 @@ unzip picard-tools-1.120.zip
 * The default `config.sh` file asks to give the directory to GATK. It actually looks for picard. 
 * The config file I use can be found under 
 
+## Edit perl
+
+```
+sed -i "s|/usr/bin/perl|$(which perl)|" scripts/*
+```
+
 ## Edit the script
 
 ```
