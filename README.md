@@ -26,7 +26,7 @@ cd polysolver/
 conda config --add channels bioconda
 conda create --name polysolver
 conda install -c anaconda perl 
-conda install -c bioconda samtools=1.9 novoalign=3.06.05 picard=2.18.23 perl-bio-db-sam=1.41 perl-array-utils=0.5 perl-parallel-forkmanager=2.02 perl-list-moreutils=0.428
+conda install -c bioconda samtools=1.9 novoalign=3.06.05 perl-bio-db-sam=1.41 perl-array-utils=0.5 perl-parallel-forkmanager=2.02 perl-list-moreutils=0.428 perl-bioperl
 conda activate polysolver
 ```
 
